@@ -62,10 +62,11 @@
 				</div>	
 				<div class="left">
 					<div id="motog">
-						<div class="content_moto">
+						<div id="content_moto">
 							<video  id ="hackVideo">
-								<source src="media/video/hack_motog.webm">
-							</video>
+								<source src="media/video/hack.webm" type='video/webm; codecs="vp8, vorbis"' />
+								<source src="media/video/hack.mp4"></source>
+							</video> 
 						</div>
 					</div>
 				</div>
@@ -144,11 +145,14 @@ spec.addEventListener('ended',function(){
 
 function hack()
 {
-	var moto = document.getElementById('motog')
-	var video = document.getElementById('hackvideo')
+	var moto = document.getElementById('motog');
+	var video = document.getElementById('hackVideo');
+	var content = document.getElementById('content_moto');
 	moto.classList.add('rotate');
 	setTimeout(function() {
 
+content.style.display="block"
+video.style.display="block"
 video.play();
   
     },1000);
