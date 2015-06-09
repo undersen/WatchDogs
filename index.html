@@ -42,6 +42,7 @@
 				<div class="right">
 					<div id="iphone">
 						<div class="content">
+							<div class="content_iphone">
 							<div id="identity">
 								<a href="#"></a>
 							</div>
@@ -54,14 +55,20 @@
 								<a href="#"></a>
 							</div>
 
+							<div id="message" onClick="alert('WeElk0m3!')">
+								<a href="#"></a>
+							</div>
+
 							<div id="hack" onClick="hack()">
 								<a href="#"></a>
 							</div>
 						</div>
 					</div>
 				</div>	
+			</div>
 				<div class="left">
 					<div id="motog">
+						<div >
 						<div id="content_moto">
 							<video  id ="hackVideo">
 								<source src="media/video/hack.webm" type='video/webm; codecs="vp8, vorbis"' />
@@ -71,12 +78,17 @@
 					</div>
 				</div>
 			</div>	
+			
 </div>
 
-	<div id="map-canvas">
+	
+</div>
+
+<div id="map-canvas">
 	</div>	
+
 </div>
-</div>
+
 
 
 </body>
@@ -89,15 +101,15 @@ $(document).ready(function() {
    document.getElementById('idLoader').style.display = 'none';
    document.getElementById('full').style.display = 'block';
  var video = document.getElementById("frontVideo");
- video.play()
+ video.play();
  google.maps.event.trigger(map, 'resize');
     },3000);
 
  var video = document.getElementById('frontVideo');
   var other = document.getElementById('idgifDiv');
     video.addEventListener('ended',function(){
-    	video.style.display="none"
-    	other.style.display="block"   
+    	video.style.display="none";
+    	other.style.display="block"   ;
     });
 
 
@@ -106,9 +118,9 @@ $(document).ready(function() {
 function play()
 {
 	var video = document.getElementById('frontVideo');
-  var other = document.getElementById('idgifDiv');
-    	other.style.display="none"
-    	video.style.display="block" 
+  	var other = document.getElementById('idgifDiv');
+    	other.style.display="none";
+    	video.style.display="block"; 
     	video.play(); 
 
 }
@@ -130,8 +142,8 @@ moto.classList.add("slideleft");
 	spec.play();
 
 spec.addEventListener('ended',function(){
-    	spec.style.display="none"
-    	img.style.display="block"  
+    	spec.style.display="none";
+    	img.style.display="block" ; 
 
 		iphone.classList.add("removeslideright");
 		moto.classList.add("removeslideleft");
@@ -149,11 +161,16 @@ function hack()
 	var video = document.getElementById('hackVideo');
 	var content = document.getElementById('content_moto');
 	moto.classList.add('rotate');
+	video.classList.add('rotateVideo')
 	setTimeout(function() {
 
-content.style.display="block"
-video.style.display="block"
+content.style.display="block";
+video.style.display="block";
 video.play();
+ video.addEventListener('ended',function(){
+    	video.style.display="none";
+    	moto.classList.remove("rotate");  ;
+    });
   
     },1000);
     	
